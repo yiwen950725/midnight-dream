@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hello</title>
+    <link rel="icon" href="./favicon-32x32.png">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+	<style>
+        body{
+            background-color: #f9fbf2;
+            color:#0e1c36;
+        }
+        #formgroup{
+            margin-right: 5em;
+            margin-left: 5em;
+            margin-top: 2em;
+            
+        }
+        .buttonstyle {
+            display: inline-block;
+            padding: 0.3em 1em;
+            text-decoration: none;
+            color: #0e1c36;
+            border: solid 2px #0e1c36;
+            border-radius: 3px;
+            transition: .4s;
+            background: white;
+        }
+
+        .buttonstyle:hover {
+            background: #0e1c36;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+
+
+<div id="formgroup">
+    <form action="./howthisworks">
+        
+        <button id="aboutus" class="buttonstyle">How This Works</button>
+        
+      </form> 
+<br>
+      
+    <h1>Welcome!</h1>
+    <h4>
+        'I'm surrounded by people - but I feel so lonely.'</h4>
+    <p>Scientific research has shown that people are most depressed at night times. <br>
+
+        Modern scientists have reached a conclusion that it is the light that interferes with your mood. <br>
+        Nowadays, people are busy with their own lives, and it is hard for us to talk about the negative side of life.<br> 
+        For me, I have always struggled with the fact that I have no one to talk to when I am feeling down.<br>
+        I am worried about that people are annoyed, but I have always wanted a place where I can pour out my thoughts. <br>
+        Now you can do the same. Feel free to leave anything you want to, and others will respond to your message. <br>
+    </p>
+    
+			<form action="./success">
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" class="form-control" required><br>
+                <label for="msg">Message:</label><br>
+                <textarea type="text" id="msg" class="form-control"rows="4" cols="50" required></textarea><br><br>
+                <button id="proceed" class="buttonstyle">Send</button>
+                
+              </form> 
+            </div> 
+          
+    
+
+    <script>
+        $("#proceed").click(() => {
+            console.log("update successful lalala");
+            var email = $('#email').val();
+		    var message = $('#msg').val();
+                $.ajax({
+                        url: "/",
+                        type: "POST",
+                        dataType: 'json',
+                        data: {
+                            "email": email,
+                            "message": message
+                        },
+                        
+                        
+                });
+                
+
+        })
+
+      
+          
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+</html>
