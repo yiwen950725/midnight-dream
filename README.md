@@ -1,4 +1,4 @@
 # midnight-dream
 Used Heroku, nodejs, express, ejs, AJAX, MongoDB
 
-Substitute your own database link and schema
+Substitute with your own database connection string and schema
